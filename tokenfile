@@ -1,0 +1,21 @@
+contract SimToken {
+    
+    string public tokenName = "SimToken";
+    string public tokenAbbrv = "ST";
+    uint public totalSupply = 0;
+
+    mapping(address => uint) public balances;
+
+ 
+    function mint(address _to, uint _amount) public {
+        totalSupply += _amount;
+        balances[_to] += _amount;
+    }
+
+  
+    function burn(address _from, uint _amount) public {
+        require(balances[_from] >= _amount, "Not enough balance to burn");
+        totalSupply -= _amount;
+        balances[_from] -= _amount;
+    }
+}
