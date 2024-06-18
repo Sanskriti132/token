@@ -46,6 +46,50 @@ need(balances[_from] >= _amount, "Not enough balance to burn"); if _from does no
 totalSupply -= _amount; subtracts _amount from totalSupply.
 reduces the balance of _from by _amount; balances[_from] -= _amount.
 
+contract SimToken {
+    // Declares a public variable 'tokenName' of type string, initialized to "SimToken".
+    // 'public' keyword makes it accessible from outside the contract.
+    string public tokenName = "SimToken";
+
+    // Declares a public variable 'tokenAbbrv' of type string, initialized to "ST".
+    // Represents the abbreviation of the token name.
+    string public tokenAbbrv = "ST";
+
+    // Declares a public variable 'totalSupply' of type uint, initialized to 0.
+    // Represents the total number of tokens in existence.
+    uint public totalSupply = 0;
+
+    // Defines a public mapping 'balances' that maps an address to a uint.
+    // Stores the balance of each address.
+    mapping(address => uint) public balances;
+
+    // Function to mint new tokens.
+    // 'public' keyword makes it accessible from outside the contract.
+    // Takes two parameters: the address to receive tokens and the amount of tokens to mint.
+    function mint(address _to, uint _amount) public {
+        // Increases the total supply of tokens by the amount specified.
+        totalSupply += _amount;
+        
+        // Adds the specified amount to the balance of the recipient address.
+        balances[_to] += _amount;
+    }
+
+    // Function to burn tokens.
+    // 'public' keyword makes it accessible from outside the contract.
+    // Takes two parameters: the address from which to burn tokens and the amount of tokens to burn.
+    function burn(address _from, uint _amount) public {
+        // Requires that the balance of the address is at least the amount to be burned.
+        // If not, the transaction reverts with the message "Not enough balance to burn".
+        require(balances[_from] >= _amount, "Not enough balance to burn");
+
+        // Decreases the total supply of tokens by the amount specified.
+        totalSupply -= _amount;
+        
+        // Subtracts the specified amount from the balance of the given address.
+        balances[_from] -= _amount;
+    }
+}
+
 
 
 HELP:Compiler Mistakes: Solidity version 0.8.18 or higher is installed on  system.
