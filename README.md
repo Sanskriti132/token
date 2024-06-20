@@ -7,7 +7,7 @@ SimToken: A Basic Token Contract for Minting and Burning.This program  demonstra
 SimToken is a Solidity-based smart contract developed on the Ethereum network. 
 For minting and burning tokens, it offers basic functionality. Users can learn the fundamentals of token administration in a decentralized setting with the aid of this contract.
 
-### GETTING STARTED
+## GETTING STARTED
 
 A straightforward Solidity token contract is called SimToken. It has public variables to hold the name, abbreviation, and total quantity of tokens, among other important token data. 
 A mapping to monitor each address's balance is included in the contract. Tokens can be burned to lower the total supply and balance or minted again to enhance the total supply and balance.
@@ -38,7 +38,8 @@ To see supply and balances, check totalSupply and balances.
 
 To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix
 website and then move to contract and click SimToken https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.26+commit.8a97fa7a.js
-contract SimToken {
+
+    contract SimToken {
     
     string public tokenName = "SimToken";
     string public tokenAbbrv = "ST";
@@ -56,15 +57,14 @@ contract SimToken {
         totalSupply -= _amount;
         balances[_from] -= _amount;
     }
-}
+    }
 
-
-# HELP
+## HELP
 Compiler Mistakes: Solidity version 0.8.18 or higher is installed on  system.
 
-# AUTHOR
+## AUTHOR
 Sanskriti Anand
 SANSKRITIANAND@132
 
-# LICENSE
+## LICENSE
 [SimTOKEN]:Sanskriti132/token
