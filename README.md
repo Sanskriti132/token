@@ -67,4 +67,4 @@ Sanskriti Anand
 SANSKRITIANAND@132
 
 ## LICENSE
-[SimTOKEN]:Sanskriti132/token
+This project is licensed under the METACRAFT License [SimTOKEN](https://github.com/Sanskriti132/token/tree/main)
